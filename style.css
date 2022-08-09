@@ -333,14 +333,22 @@ h3 {
 #team {
   margin-block: 8rem;
 }
+.main_team_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  place-items: center;
+  gap: 2rem;
+}
 .single_team_container {
   max-width: 18rem;
-  height: 22rem;
+  max-height: 22rem;
+  box-shadow: 0px 5px 1rem rgba(79 78 78 / 0.5);
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 .single_team_profile {
   position: relative;
   overflow: hidden;
-  border: 2px solid blue;
 }
 .img_container {
   width: 100%;
@@ -361,8 +369,7 @@ h3 {
   right: 0;
 
   transform: translateX(100%);
-  /* transform-origin: 100%; */
-  /* animation: show_links 300ms ease-in forwards; */
+  transition: transform 300ms ease-in;
 }
 .open_team {
   animation: show_links 300ms ease-in forwards;
@@ -373,17 +380,19 @@ h3 {
   transition: animation 300ms ease-in;
 }
 .single_team_container:hover .profile_links {
-  /* animation: show_links 300ms ease-in forwards; */
+  transform: translateX(0%);
 }
 .profile_cred {
   text-align: center;
   padding-block: 1rem;
   background-color: rgb(241, 236, 236);
+}
+.profile_cred h3 {
   color: #000000;
   transition: color 300ms ease-in;
 }
-.single_team_container:hover .profile_cred h3 {
-  color: #07666f;
+.single_team_container:hover .profile_cred > h3 {
+  color: #349292;
 }
 .profile_links ul {
   height: 100%;
@@ -394,10 +403,10 @@ h3 {
   flex-direction: column;
 }
 .profile_links *.fab {
-  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
   color: #f0ebeb;
   border-radius: 50%;
-  width: 3rem;
+  width: 2rem;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -409,25 +418,5 @@ h3 {
 .profile_links *.fab:hover {
   background-color: transparent;
   border: 2px solid #07666f;
-}
-@keyframes show-links {
-  0% {
-    transform: translateX(100%);
-    /* opacity: 0; */
-  }
-  100% {
-    transform: translateX(0%);
-    /* opacity: 1; */
-  }
-}
-@keyframes hide-links {
-  0% {
-    transform: translateX(0%);
-    /* opacity: 0; */
-  }
-  100% {
-    transform: translateX(100%);
-    /* opacity: 1; */
-  }
 }
 /* ? Team Profiles Section End */
