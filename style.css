@@ -532,7 +532,7 @@ h3 {
 }
 .footer_content > h2,
 .footer_logo {
-  color: orange;
+  color: #f0ebeb;
   margin-bottom: 2rem;
   text-transform: capitalize;
 }
